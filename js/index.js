@@ -1,15 +1,17 @@
 let serialNo = 0;
 // traingle part 
 document.getElementById('traingle-btn').addEventListener('click', function(){
-  serialNo += 1;
+  
   const elementTitle = document.getElementById('triangle-title').innerText;
   const elementTriangleBase = document.getElementById('triangle-base').value;
   const elementTriangleHeight = document.getElementById('triangle-height').value;
    if(elementTriangleBase=='' || elementTriangleHeight=='' || elementTriangleBase <=0 || elementTriangleHeight<=0 || isNaN(elementTriangleBase) || isNaN(elementTriangleHeight)){
     return alert ('please provide a valid number');
    }
+  
   const totalValue = 0.5 *  elementTriangleBase * elementTriangleHeight;
   getValue(elementTitle, elementTriangleBase, elementTriangleHeight, totalValue.toFixed(2));
+  serialNo += 1;
   })
 // Rectangle part 
 document.getElementById('rectangle-btn').addEventListener('click', function(){
@@ -23,6 +25,7 @@ document.getElementById('rectangle-btn').addEventListener('click', function(){
   // const totalValue = parseFloat(elementTriangleBase) * parseFloat(elementTriangleHeight);
   const totalValue = elementRectangleWide * elementRectangleLength;
   getValue(elementTitle, elementRectangleWide, elementRectangleLength, totalValue.toFixed(2));
+  serialNo += 1;
   })
 // Parallelogram Part
 document.getElementById('parallelogram-btn').addEventListener('click', function(){
