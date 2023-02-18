@@ -1,3 +1,13 @@
+// validation function
+// function validate(evt){
+//   evt.value = evt.value.replace(/[^0-9]/g,"");
+// }
+function isInputNumber(evt){
+  var ch = String.fromCharCode(evt.which);
+  if(!(/[0-9]/.test(ch))){
+    evt.preventDefault();
+  }
+}
 let serialNo = 0;
 // traingle part 
 document.getElementById('traingle-btn').addEventListener('click', function(){
@@ -5,8 +15,9 @@ document.getElementById('traingle-btn').addEventListener('click', function(){
   const elementTitle = document.getElementById('triangle-title').innerText;
   const elementTriangleBase = document.getElementById('triangle-base').value;
   const elementTriangleHeight = document.getElementById('triangle-height').value;
-   if(elementTriangleBase=='' || elementTriangleHeight=='' || elementTriangleBase <=0 || elementTriangleHeight<=0 || isNaN(elementTriangleBase) || isNaN(elementTriangleHeight)){
-    return alert ('please provide a valid number');
+   if(elementTriangleBase=='' || elementTriangleHeight=='' || elementTriangleBase <=0 || elementTriangleHeight<=0 || isNaN(elementTriangleBase) || isNaN(elementTriangleHeight 
+    || !elementTriangleBase.match('/^\d+/') || !elementTriangleHeight.match('/^\d+/'))){
+    return alert ('please provide a valid number (0-9)');
    }
   
   const totalValue = 0.5 *  elementTriangleBase * elementTriangleHeight;
