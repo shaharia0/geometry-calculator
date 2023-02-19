@@ -2,12 +2,12 @@
 // function validate(evt){
 //   evt.value = evt.value.replace(/[^0-9]/g,"");
 // }
-function isInputNumber(evt){
-  var ch = String.fromCharCode(evt.which);
-  if(!(/[0-9]/.test(ch))){
-    evt.preventDefault();
-  }
-}
+// function isInputNumber(evt){
+//   var ch = String.fromCharCode(evt.which);
+//   if(!(/[0-9]/.test(ch))){
+//     evt.preventDefault();
+//   }
+// }
 let serialNo = 0;
 // traingle part 
 document.getElementById('traingle-btn').addEventListener('click', function(){
@@ -26,7 +26,6 @@ document.getElementById('traingle-btn').addEventListener('click', function(){
   })
 // Rectangle part 
 document.getElementById('rectangle-btn').addEventListener('click', function(){
-  serialNo += 1;
   const elementTitle = document.getElementById('triangle-title').innerText;
   const elementRectangleWide = document.getElementById('rectangle-wide').value;
   const elementRectangleLength = document.getElementById('rectangle-length').value;
